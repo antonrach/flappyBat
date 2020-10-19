@@ -1,0 +1,324 @@
+@font-face {
+    font-family: "Sansita Swashed";
+    src: url('fonts/Sansita\ Swashed/SansitaSwashed-VariableFont_wght.ttf');
+}
+
+.gamescreen {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+body {
+    background-color: #000000;
+}
+
+.pauseoverlay {
+    display: none;
+    position: absolute;
+    height: 530px;
+    width: 1024px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, .6);
+}
+.pauseoverlay._active {
+    display: block;
+    z-index: 2;
+}
+
+.pauseoverlay._active ~ .gamescreen {
+    z-index: 1;
+}
+.po1 {
+    height: 530px;
+    width: 100%;
+    position: relative;
+}
+.pausedesc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pausedesc > i {
+    color: #ffffff;
+    font-size: 72px;
+    transition: .2s;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+}
+.pausedesc > i:hover{
+    cursor: pointer;
+    color: #fff766;
+    transition: .2s;
+}
+.paused {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.continue {
+    color: #ffffff;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+}
+.openmenu {
+    color: #ffffff;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: .2s;
+    font-weight: bold;
+}
+.openmenu:hover {
+    cursor: pointer;
+    color: #fff766;
+    transition: .2s;
+}
+
+.gametitle {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 52px;
+    color: red;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.kreator {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
+.container {
+    position: relative;
+    margin: auto;
+    max-width: 1024px;
+    height: 600px
+}
+.menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 530px;
+    width: 1024px;
+    display: none;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .6);
+}
+.menu._active {
+    display: block;
+    z-index: 3;
+}
+
+.menu1 {
+    height: 530px;
+    width: 100%;
+    position: relative;
+}
+.menuoptions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menuoptions > div {
+    color: #ffffff;
+    font-size: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 24px;
+    line-height: 100%;
+    transition: .2s;
+}
+.exit {
+    margin-bottom: 0;
+}
+.menuoptions > div:hover {
+    cursor: pointer;
+    transition: .2s;
+    color: #fff766;
+}
+
+.instructdesc {
+    display: none;
+    position: absolute;
+    height: 530px;
+    width: 1024px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, .6);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.instructdesc._active {
+    display: block;
+    z-index: 3;
+}
+.instructdesc > p {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    line-height: 100%;
+}
+.instructdesc > p:last-of-type {
+    margin-bottom: 150px;
+}
+.instructback {
+    display: flex;
+    justify-content: center;
+}
+
+.scorerec {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 530px;
+    width: 1024px;
+    display: none;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .6);
+}
+.scorerec._active {
+    display: block;
+    z-index: 3;
+}
+.sc > p {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 122px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sc {
+    position: relative;
+    width: 562px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.normalhighscore, .hardcorehighscore {
+    color: #ffffff;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hardcorehighscore {
+    margin-bottom: 64px;
+}
+
+.resetbutton {
+    border: 2px solid white;
+    height: 40px;
+    position: relative;
+    width: 130px;
+    font-size: 24px;
+    transition: .2s;
+}
+.resetbutton > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+}
+.resetbutton:hover {
+    cursor: pointer;
+    border-color: #fff766;
+    background-color: #fff766;
+    transition: .2s;
+}
+.resetbutton:hover > span {
+    color: black;
+    transition: .2s;
+}
+.question {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .6);
+    width: 1024px;
+    height: 530px;
+    z-index: 0;
+    display: none;
+}
+.question._active {
+    z-index: 3;
+    display: block;
+}
+.quest {
+    width: 512px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.questdesc {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 122px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.yesno {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.yesno > i {
+    color: white;
+    font-size: 150px;
+    transition: .3s;
+}
+
+.ansyes:hover {
+    cursor: pointer;
+    color: yellowgreen;
+    transition: .3s;
+}
+.ansno:hover {
+    cursor: pointer;
+    color: red;
+    transition: .3s;
+}
